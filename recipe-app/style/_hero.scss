@@ -1,0 +1,144 @@
+@import "./mediaQ";
+
+.hero-section{
+    width: 100vw;
+    height: calc(100vh - 5em);
+    position: relative;
+    @include sm{
+        
+        background-color: hsl(26, 18%, 67%, 0.5);
+    }
+    @include md{
+        height: 110vh;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        object-fit: cover;
+        object-position: center;
+        @include sm{
+            max-width: 600px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+    }
+    h1{
+        width: max-content;
+        aspect-ratio: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $ff-head;
+        color: $clr-dark-8;
+        font-size: $fs-head-8;
+        line-height: 0.9;
+        transition: $trans;
+        @include sm{
+            padding-inline: 2em;
+            font-size: min( calc(1em + 5vw), 4rem);
+            top: 60%;
+        }
+        @include md{
+            top: 55%;
+        }
+        font-weight: $fw-7;
+        text-align: center;
+        padding:0.5em;
+        padding-top: 5em;
+        z-index: 0;
+
+        
+        &::after, &::before{
+            position: absolute;
+            content:"";
+            width: 100%;
+            aspect-ratio: 1;
+            top:0;
+            left: 0;
+            background-color:hsl(26, 18%, 67%, 0.25);
+            z-index: -1;
+            @include sm{
+                width: 70%;
+                left: 15%;
+                top: 10%;
+                transform: translateX(-50%);
+            }
+            
+        }
+        &::after{
+            border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+            animation: animate 6s linear infinite;
+        }
+        &::before{
+            border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+            animation: animate 6s linear infinite;
+            background-color:hsl(26, 18%, 67%, 0.25);
+        }
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes animate2 {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        span{
+            letter-spacing: 0.1em;
+            filter: drop-shadow(0 0 2px $clr-dark-8);
+            background: linear-gradient(to right, $clr-accent-5, $clr-accent-4);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            white-space: nowrap;
+            z-index: 0;
+            &::after{
+                position: absolute;
+                left: 0;
+                top:0;
+                content:"";
+                width: 100%;
+                height: 100%;
+                background-color: hsla(0, 0%, 100%, 0.65);
+                box-shadow: inset 0 0 5px 0 hsla(0, 0%, 100%,);
+                z-index: -1;
+            }
+        }   
+        
+    }
+    &.scroll-up h1{
+        animation: heroLine 2s forwards linear;
+    }
+    &.scroll-down h1{
+        animation: heroLine2 2s forwards linear;
+    }
+    @keyframes heroLine {
+        0%, 10%{
+            line-height: 0.9;
+        }
+         100%{
+            line-height: 1.5;
+        }
+    }
+    @keyframes heroLine2 {
+        0%, 10%{
+            line-height: 1.5;
+        }
+         100%{
+            line-height: 0.9;
+        }
+    }
+}

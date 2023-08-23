@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Ubuntu:wght@400&display=swap" );
+@import "./mediaQ";
+
+$ff-head: "Merienda", sans-serif;
+$ff-primary: "Ubuntu", sans-serif;
+
+$fs-small-1: 0.75rem;
+$fs-primary-2: 1rem;
+$fs-subtitle-4: 1.25rem;
+$fs-subhead-5: calc(0.5em + 5vw);
+$fs-head-8: calc(1em + 5vw);
+
+@include sm{
+    $fs-head-8: 3rem;           
+}
+
+$fw-4: 400;
+$fw-7: 700;
+
+$clr-light-1:hsl(0 0% 100%);
+$clr-primary-2:  hsl(26, 18%, 67%);
+$clr-accent-4: hsl(30, 99%, 63%);
+$clr-accent-5: hsl(157, 92%, 43%);
+$clr-dark-8: hsl(26, 18%, 27%);
+
+$linear:linear-gradient(to right, hsl(30, 99%, 63%, 0.05),hsl(30, 99%, 63%, 0.75),hsl(157, 92%, 43%, 0.75), hsl(157, 92%, 43%, 0.05)); 
+
+$trans: all 450ms ease-in-out;
+$box-1: 0 0 0.5em 0 hsl(26, 18%, 27%, 0.5);
+$box-2: 5px 5px 5px 0 hsl(26, 18%, 67%)

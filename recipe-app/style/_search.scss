@@ -1,0 +1,179 @@
+
+.search-section{
+    margin-bottom: 4em;
+    h3{
+        padding-block: 1em;
+        font-size: $fs-subhead-5;
+            @include sm{
+            font-size: 3rem;
+            
+        }
+        color: $clr-light-1;
+        text-align: center;
+        position: relative;
+        &::after{
+            position: absolute;
+            content:"";
+            left:0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background: $linear;
+            z-index: -1;
+            transform: scale(0, 1);
+            transition: $trans;
+            transform-origin: 50% 50%;
+        }
+        &.active::after{
+            transform: scale(1, 1);
+        }
+    }
+    .search-container{
+        width: 100%;
+        .search-form{
+           
+            width: 60%;
+            max-width: 500px;
+            margin-inline: auto;
+            height: 2em;
+            box-shadow: $box-1;
+            border-radius: 5px 2em 2em 5px;
+            display: grid;
+            grid-template-columns: 1fr 2em;
+            
+            &>*{
+                border: none;
+                outline: none;
+                border-radius: 5px;
+            }
+            input{
+                padding: 2px 1em;
+            }
+            button{
+                border-radius: 50%;
+                cursor: pointer;
+                background-image: url("../image/magnifying-glass-solid\ \(1\).svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 60%;
+                transition: $trans;
+                &:hover{
+                    background-color: hsl(30, 99%, 63%, 0.5);
+                }
+            }
+        }
+    }
+    .filter-btn-nav{
+        width: max-content;
+        margin-inline: auto;
+        margin-block: 1em;
+        padding-inline: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: scroll;
+        gap: 1em;
+        
+        &>*{
+            padding: 0.2em 0.5em;
+            border: none;
+            box-shadow: $box-2;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover{
+                box-shadow:inset $box-1;
+            }
+        }
+        button:nth-of-type(1){
+            box-shadow:inset $box-1;
+        }
+    }
+
+    .search-list{
+        width: 80%;
+        margin-inline: auto;
+        margin-bottom: 1em;
+        list-style: none;
+        transform-origin:top;
+        transform: scale(1, 0);
+        transition: $trans;
+
+        &.anima{
+            transform-origin: bottom;
+            transform: scale(1, 1);
+        }
+
+        .search-item{
+            
+            box-shadow: inset $box-2;
+            padding:0.5em 1em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .search-img{
+                height: 3em;
+                border-radius: 5px;
+                overflow: hidden;
+                aspect-ratio: 1;
+                object-fit: contain;
+                object-position: center;
+            }
+            .like-search-btn{
+                margin-left: auto;
+                margin-right: 1em;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                i{
+                    color: hsl(30, 99%, 63%, 0.5)
+                }
+                &.active i{
+                    color: hsl(30, 99%, 63%, 0.95)
+                }
+            }
+            .extand-btn{
+                @extend .like-search-btn;
+                margin-left: 0;
+            }
+            .plan-week-btn-list{
+                list-style: none;
+                width: 0;
+                transition: $trans;
+                display: none;
+                transform: scale(0, 0);
+                &>*{
+                    font-size: 0.5em;
+                    &:hover button{
+                        opacity: 0.75;
+                    }
+                    button{
+                        border: none;
+                        cursor: pointer;
+                        opacity: 0.25;
+                    }
+                }
+                &[data-visible="true"]{
+                    width: 3em;
+                    display: block;
+                    transform: scale(1, 1);
+                }
+            }
+
+           
+        }
+    }
+    .refresh-search-btn{
+        transform: translateX(calc(50vw - 50%));
+        border: none;
+        background-color: transparent;
+        background:url("../image/abstract-orange-watercolor-brush-stroke_1035-19511.avif") ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: $box-1;
+        cursor: pointer;
+        padding: 0.2em 1em;
+        border-radius: 100vw;
+    }
+}

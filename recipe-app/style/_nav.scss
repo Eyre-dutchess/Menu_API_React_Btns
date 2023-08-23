@@ -1,0 +1,105 @@
+header{
+    width: 100%;
+    height: 5em;
+    background-color: $clr-primary-2;
+    position: relative;
+    z-index: 999;
+    .logo{
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        border: 5px $clr-light-1;
+        border-style: groove;
+        position: absolute;
+        top:1em;
+        left: 5vw;
+    }
+    .header-btn{
+        width: 2em;
+        height: 2em;
+        position: absolute;
+        top:1.5em;
+        right: 5vw;
+        border: none;
+        background-color: hsl(0 0% 100%/ 0.5);
+        cursor: pointer;
+        background-image: url("../image/icon-hamburger\ \ copy.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70%;
+        transition: $trans;
+
+        &:hover{
+            background-color: hsl(0 0% 100%/ 0.25);
+            border-radius: 50%;
+        }
+        &[aria-expanded="true"]{
+            background-image: url("../image/icon-close\ copy.svg");
+        }
+    }
+    .header-nav{
+        width: 100%;
+        height: 60vh;
+        background: linear-gradient(to bottom, hsl(26, 18%, 67%, 0.75), hsl(30, 99%, 63%, 0.75), hsl(157, 92%, 43%, 0.75));
+        position: absolute;
+        top: 5em;
+        left:0;
+        border-radius:0% 0% 48% 50% / 8% 8% 92% 91%; 
+        transform-origin: top;
+        transform: scale(1, 0);
+        transition: transform 450ms linear, 
+        border-radius 400ms ease 450ms;
+        z-index: 999;
+        &[data-visible = "true"]{
+            transform: scale(1, 1);
+            border-radius:0%; 
+        }
+        
+        .header-list{
+            width: 100%;
+            height: 100%;
+            padding: 0 5vw 2em 5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+            list-style: none;
+            .header-item{
+                cursor: pointer;
+                a{
+                    color: $clr-light-1;
+                    text-decoration:none;
+                }
+                &:hover a{
+                    text-decoration: underline;
+                    text-underline-offset: 0.2em;
+                    
+                }
+            }
+        }
+        
+        // @keyframes NavShape {
+        //     100%{
+        //         transform: scale(1, 0);
+        //     }
+        // }
+    }
+    .like-nav-btn{
+        width: 2em;
+        height: 2em;
+        position: absolute;
+        top: 1.5em;
+        right: calc(5vw + 3em);
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        i{
+            color: $clr-accent-4;
+        }
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+
+}

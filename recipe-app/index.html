@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+</head>
+<body>
+    <header>
+      <img src="./image/logo.png" alt="" class="logo">
+      <button class="header-btn" aria-expanded="false"></button>
+      <nav class="header-nav" data-visible="false">
+        <ul class="header-list">
+            <li class="header-item"><a href="#">About</a></li>
+            <li class="header-item"><a href="#">Plans</a></li>
+            <li class="header-item"><a href="#">SignIn/Up</a></li>
+        </ul>
+      </nav>
+      <button class="like-nav-btn"><i class="fa fa-heart"></i></button>  
+    </header>
+
+    <div class="hero-section">
+        <img src="./image/heroimg-2.jpeg" alt="">
+        
+        <div class="hero-content">
+            <h1>Your Meals Can Be <br><span>Healthy! Fun!</span><br> Start Today!</h1>
+        </div>
+    </div>
+
+    <div class="recmend-section" data-recmend-section data-fav-show-section>
+        <h3 class="focus-title" data-title>Today's Picks</h3>
+        <div class="recmend-container" >
+            
+            <div class="focus-recmend" data-random-container>
+                <div class="focus-img"><img src="" alt="" ></div>
+                <div class="focus-content">
+                    <!-- <h6 class="focus-name">salad</h6>
+                    <p>salmon / beef</p> -->
+                </div>
+                <button class="like-btn"></button>
+            </div>
+
+            <ul class="recmend-list" data-random-list-container>
+                <li  data-random-item></li>
+                <li data-random-item></li>
+                <li  data-random-item></li>
+            </ul>
+
+            <button class="fav-btn" ></button>
+
+            <div class="fav-container">
+                
+                <h3>Your Collection</h3>
+                <ul class="fav-list" data-fav-container>
+                    <!-- <li class="fav-item">
+                        <img src="./image/235342.webp" alt="" class="fav-img">
+                        <p class="fav-name">dshfdk</p>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mealplan-section">
+        <h3 class="mealplan-title" data-title>Customize Your Meals</h3>
+        <div class="mealplan-container">
+            <button class="add-btn" data-add-btn><i class="fa fa-plus"></i></button>
+            <div class="container" data-container>
+                <div class="day-container" data-day-container>
+                    <!-- <div class="monday top" >
+                        <div class="top-left" data-top-left>
+                            <input type="text" data-day-input>
+                            <p data-day-output>NewNote</p>
+                        </div>
+                        
+                        <button class="del-btn"><i class="fa fa-trash"></i></button>
+                        <button class="edit-btn"><i class="fa fa-edit"></i></button>
+                    </div>
+                    <div class="content-container" data-monday-content>
+                        <input type="text" class="meal-input">
+                        <textarea id="" cols="10" rows="2" class="meal-textarea"></textarea>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-section" data-recmend-section data-fav-show-section>
+        <h3 class="" data-title>Give it a Whirl!</h3>
+        <div class="search-container" >
+            <form action="" class="search-form" data-search-form>
+                <input type="text" class="search-input" data-search-input>
+                <button class="search-btn"></i></button>
+            </form>
+            <div class="filter-btn-nav" data-filter-btn-container>
+                <!-- <button class="filter-btn" data-id="all">All</button>
+                <button class="filter-btn" data-id="desert">Desert</button>
+                <button class="filter-btn" data-id="lunch">Lunch</button> -->
+            </div>
+
+            <ul class="search-list" data-search-container>
+                <!-- <li class="search-item">
+                    <img src="./image/abstract-orange-watercolor-brush-stroke_1035-19511.avif" alt="" class="search-img">
+                    <h6 class="searched-name">cake</h6>
+                    <button class="like-search-btn"><i class="fa fa-heart"></i></button>
+                    <button class="extand-btn" aria-expanded="false"><i class="fa fa-pencil"></i></button>
+                    <ul class="plan-week-btn-list" data-visible="false">
+                        <li class="plan-week-item"><button>Monday</button></li>
+                        <li class="plan-week-item"><button>Tuesday</button></li>
+                        <li class="plan-week-item"><button>Wednesday</button></li>
+                        <li class="plan-week-item"><button>Thursday</button></li>
+                        <li class="plan-week-item"><button>Friday</button></li>
+                        <li class="plan-week-item"><button>Saturday</button></li>
+                        <li class="plan-week-item"><button>Sunday</button></li>
+                    </ul>
+                </li> -->
+            </ul>
+            <button class="refresh-search-btn">Refresh</button>
+        </div>
+    </div>
+    
+    <div class="cta-section">
+        <h1 data-title>Your Meals Can Be<span class="title-span"> Healthy!Fun! </span>Start Today!</h1>
+        <form action="" class="cta-form">
+            <input type="text" class="email">
+            <span class="email-alert"></span>
+            <button class="email-btn">Start now</button>
+        </form>
+    </div>
+
+    <footer>
+        <img src="./image/logo.png" alt="" class="footer-logo">
+        <div class="icon-group">
+            <a><i class="fa fa-pinterest"></i></a>
+            <i class="fa fa-github"></i>
+        </div>
+    </footer>
+</body>
+</html>
