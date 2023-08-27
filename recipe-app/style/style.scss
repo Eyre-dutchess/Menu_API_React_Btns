@@ -221,6 +221,16 @@ body{
   font-size: $fs-head-8;
   font-family: $ff-head;
   text-align: center;
+     h1{
+    width: 80%;
+    margin-inline: auto;
+      }
+      @include md{
+        font-size: clamp(2.5rem, 2rem + 5vw,  4rem);
+            h1{
+              width: 50%;
+            }
+      }
 
     .title-span{
             letter-spacing: 0.1em;
